@@ -1,9 +1,9 @@
 # Install and Build
 
 Build with:
-rustup install nightly-2020-10-06
-rustup target add wasm32-unknown-unknown --toolchain nightly-2020-10-06
-cargo +nightly-2020-10-06 build --release
+- rustup install nightly-2020-10-06
+- rustup target add wasm32-unknown-unknown --toolchain nightly-2020-10-06
+- cargo +nightly-2020-10-06 build --release
 
 # Frontier
 
