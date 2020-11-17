@@ -28,7 +28,6 @@ mod receipt;
 mod sync;
 mod transaction;
 mod transaction_request;
-mod transaction_condition;
 mod work;
 
 pub mod pubsub;
@@ -38,7 +37,7 @@ pub use self::bytes::Bytes;
 pub use self::block::{RichBlock, Block, BlockTransactions, Header, RichHeader, Rich};
 pub use self::block_number::BlockNumber;
 pub use self::call_request::CallRequest;
-pub use self::filter::{Filter, FilterChanges, VariadicValue, FilterAddress, Topic};
+pub use self::filter::{Filter, FilterChanges, VariadicValue, FilterAddress, Topic, FilteredParams};
 pub use self::index::Index;
 pub use self::log::Log;
 pub use self::receipt::Receipt;
@@ -48,5 +47,4 @@ pub use self::sync::{
 };
 pub use self::transaction::{Transaction, RichRawTransaction, LocalTransactionStatus};
 pub use self::transaction_request::TransactionRequest;
-pub use self::transaction_condition::TransactionCondition;
 pub use self::work::Work;
