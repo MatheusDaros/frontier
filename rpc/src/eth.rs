@@ -715,7 +715,7 @@ impl<B, C, P, CT, BE, H: ExHashT> EthApiT for EthApi<B, C, P, CT, BE, H> where
 			},
 		};
 
-		Ok(used_gas)
+		Ok(used_gas * 100)
 	}
 
 	fn transaction_by_hash(&self, hash: H256) -> Result<Option<Transaction>> {
