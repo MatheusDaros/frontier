@@ -20,7 +20,7 @@
 //
 const PrivateKeyProvider = require("./private-provider");
 var privateKey = "99B3C12287537E38C90A9219D4CB074A89A16E9CDB20BF85728EBD97C343E342";
-const privProvider = new PrivateKeyProvider(privateKey, `http://localhost:9933`, 42);
+const privProvider = new PrivateKeyProvider(privateKey, `http://localhost:9933`, 1337);
 
 module.exports = {
     /**
