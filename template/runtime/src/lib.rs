@@ -41,6 +41,8 @@ pub use frame_support::{
 		constants::{BlockExecutionWeight, ExtrinsicBaseWeight, RocksDbWeight, WEIGHT_PER_SECOND},
 	},
 	ConsensusEngineId,
+	decl_module, //im-online
+	dispatch //im-online
 };
 use pallet_evm::{
 	Account as EVMAccount, FeeCalculator, HashedAddressMapping,
@@ -48,6 +50,11 @@ use pallet_evm::{
 };
 use fp_rpc::TransactionStatus;
 use pallet_transaction_payment::CurrencyAdapter;
+
+/// im-online Changes
+
+use frame_system::ensure_signed;
+use pallet_im_online::{self as im_online};
 
 /// Type of block number.
 pub type BlockNumber = u32;
@@ -140,6 +147,16 @@ parameter_types! {
 }
 
 // Configure FRAME pallets to include in runtime.
+
+// im-online
+impl pallet_im_online::Config for Runtime {
+	type AuthorityId = ImOnlineId;
+	type Event = Event;
+    type SessionDuration = SessionDuration;
+    type ReportUnresponsiveness = Offences;
+    type UnsignedPriority = ImOnlineUnsignedPriority;
+    type WeightInfo = ();
+}
 
 impl frame_system::Config for Runtime {
 	/// The basic call filter to use in dispatchable.
@@ -344,6 +361,7 @@ construct_runtime!(
 		Sudo: pallet_sudo::{Module, Call, Config<T>, Storage, Event<T>},
 		Ethereum: pallet_ethereum::{Module, Call, Storage, Event, Config, ValidateUnsigned},
 		EVM: pallet_evm::{Module, Config, Call, Storage, Event<T>},
+		ImOnline: pallet_im_online::{Module, Call, Storage, Event<T>, ValidateUnsigned, Config<T>}, // im-online
 	}
 );
 
