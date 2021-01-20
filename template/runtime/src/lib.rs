@@ -40,9 +40,7 @@ pub use frame_support::{
 		Weight, IdentityFee,
 		constants::{BlockExecutionWeight, ExtrinsicBaseWeight, RocksDbWeight, WEIGHT_PER_SECOND},
 	},
-	ConsensusEngineId,
-	decl_module, //im-online
-	dispatch //im-online
+	ConsensusEngineId
 };
 use pallet_evm::{
 	Account as EVMAccount, FeeCalculator, HashedAddressMapping,
