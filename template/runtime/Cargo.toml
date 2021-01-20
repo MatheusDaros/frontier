@@ -31,6 +31,8 @@ pallet-timestamp = { version = "2.0.0-dev", default-features = false, git = "htt
 pallet-transaction-payment = { version = "2.0.0-dev", default-features = false, git = "https://github.com/paritytech/substrate.git", branch = "frontier" }
 pallet-transaction-payment-rpc-runtime-api = { version = "2.0.0-dev", default-features = false, git = "https://github.com/paritytech/substrate.git", branch = "frontier" }
 
+pallet-nicks = { default-features = false, version = '2.0.0', git = "https://github.com/paritytech/substrate.git", branch = "frontier"  }
+
 sp-api = { version = "2.0.0-dev", default-features = false, git = "https://github.com/paritytech/substrate.git", branch = "frontier" }
 sp-block-builder = { default-features = false, git = "https://github.com/paritytech/substrate.git", branch = "frontier"}
 sp-consensus-aura = { version = "0.8.0-dev", default-features = false, git = "https://github.com/paritytech/substrate.git", branch = "frontier" }
@@ -72,6 +74,8 @@ std = [
 	"pallet-timestamp/std",
 	"pallet-transaction-payment-rpc-runtime-api/std",
 	"pallet-transaction-payment/std",
+
+	'pallet-nicks/std',
 
 	"sp-api/std",
 	"sp-block-builder/std",
